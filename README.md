@@ -1,7 +1,7 @@
 # Environment Setup to clone and run an assembly program
 For RISC V Artitecture, i will be using OpenPiton + Ariane core. It's a six stage pipeline and multicore
 
-First step is to clone the Respositary : 
+## Step 1 is to clone the Respositary : 
 
 ```bash
 git clone https://github.com/PrincetonUniversity/openpiton.git
@@ -12,7 +12,7 @@ Set the Root Variable: OpenPiton needs to know where its files are located at al
 ```bash
 export PITON_ROOT=`pwd`
 ```
-Step 2: Initialize the Environment
+## Step 2: Initialize the Environment
 OpenPiton uses a 64-bit RISC-V core called Ariane. This requires a different set of settings than your previous Ibex projects.
 
 Source the Main Settings:
@@ -29,7 +29,7 @@ Why? These scripts add the necessary tools to your PATH and configure the simula
 The image below shows sucessful integration
 <img width="925" height="325" alt="image" src="https://github.com/user-attachments/assets/6d95acc6-d904-41ed-bb2a-946dc8962bda" />
 
-Step 3: Build the Tools (Crucial Step)
+## Step 3: Build the Tools (Crucial Step)
 Before you can run a C program, you need a 64-bit RISC-V toolchain (compiler) and simulation helpers.
 
 Run the Build Script: Downloading the entire RISC-V toolchain, compiling a C++ cross-compiler, and building Verilator, it is the "heavy lifting" part of the setup
@@ -182,7 +182,7 @@ sims -sys=manycore -vlt_build -ariane
 ```
 It takes about 10 mins...
 
-### Step - 4
+## Step - 4
 Now that the hardware model is built, you can finally run your first software program on it. Since you are targeting the Ariane core, you can use the -vlt_run flag to launch the simulation.
 
 Run your first "Hello World" (or a basic assembly test) with this command:
@@ -224,7 +224,10 @@ The Solution: You compiled the tests manually and then pointed the script direct
 
 The Final Commands:
 
-Build the test: cd $ARIANE_ROOT/tmp/riscv-tests/isa && make rv64ui-p-add
+Build the test: 
+```bash
+cd $ARIANE_ROOT/tmp/riscv-tests/isa && make rv64ui-p-add
+```
 
 Run the simulation:
 
