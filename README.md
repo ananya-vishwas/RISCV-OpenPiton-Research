@@ -182,7 +182,7 @@ sims -sys=manycore -vlt_build -ariane
 ```
 It takes about 10 mins...
 
-## Step - 4
+## Step - 4 
 Now that the hardware model is built, you can finally run your first software program on it. Since you are targeting the Ariane core, you can use the -vlt_run flag to launch the simulation.
 
 Run your first "Hello World" (or a basic assembly test) with this command:
@@ -192,7 +192,7 @@ cd /home/misty/openpiton/build
 sims -sys=manycore -x_tiles=1 -y_tiles=1 -vlt_run -ariane /home/misty/openpiton/piton/verif/diag/assembly/riscv/rv64ui-p-add.s
 ```
 
-1. Fixing the Simulation Script (sims,2.0)
+ 1. Fixing the Simulation Script (sims,2.0) 
 The main script was missing the command to actually start the simulator and was crashing on minor hardware warnings.
 
 The Problem: The script tried to execute -f as a program name and stopped the build for things like timing delays (STMTDLY) and unpacked structs.
